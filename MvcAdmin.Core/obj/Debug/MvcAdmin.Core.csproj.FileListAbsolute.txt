@@ -1,0 +1,7 @@
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\obj\Debug\MvcAdmin.Core.csprojResolveAssemblyReference.cache
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\bin\Debug\MvcAdmin.Core.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\bin\Debug\MvcAdmin.Core.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\bin\Debug\MySql.Data.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\bin\Debug\Newtonsoft.Json.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\obj\Debug\MvcAdmin.Core.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\obj\Debug\MvcAdmin.Core.pdb

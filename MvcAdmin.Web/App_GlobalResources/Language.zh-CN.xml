@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <item name="Greeting4Chris" value="string" >
+    %3c%27%27%27%22%3e%23%40%24%3f
+  </item>
+  <item name="Greeting4NewYear" value="string" >
+    test新年快乐
+  </item>
+</resources>

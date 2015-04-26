@@ -1,0 +1,17 @@
+﻿@using MvcAdmin.Model;
+@{
+    MSite m = ViewData["model"] as MSite;
+    ViewBag.Title = m.SiteName;
+    ViewBag.SiteTitle = m.SiteName;
+    ViewBag.UserId = int.Parse(ViewData["userID"].ToString());
+    ViewBag.UserName = ViewData["userName"].ToString();
+    
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+    
+@{Html.RenderAction("Default", "Home", new RouteValueDictionary(new
+      {
+          Area = "Admin",
+          controller = "Home",
+          action = "Default"
+      }));}

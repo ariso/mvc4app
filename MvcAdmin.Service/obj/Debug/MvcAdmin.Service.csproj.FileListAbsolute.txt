@@ -1,0 +1,12 @@
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\obj\Debug\MvcAdmin.Service.csprojResolveAssemblyReference.cache
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Service.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Service.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Core.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.DAO.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Model.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MySql.Data.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Core.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.DAO.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\bin\Debug\MvcAdmin.Model.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\obj\Debug\MvcAdmin.Service.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\obj\Debug\MvcAdmin.Service.pdb

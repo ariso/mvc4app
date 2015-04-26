@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+    System.Xml.XmlNodeList list = ViewData["model"] as System.Xml.XmlNodeList;
+}
+<span class="tip-title">配置数据浏览</span>
+<table class="table">
+      <caption>
+
+      </caption>
+      <thead>
+        <tr>
+          <th width="100px" align="center">键</th>
+          <th align="center" width="150px">描述</th>
+          <th align="center">值</th>
+        </tr>
+      </thead>
+      <tbody>
+          @foreach (System.Xml.XmlNode  n in list)
+          {
+          <tr>
+          <td>@n.Attributes["name"].InnerText</td>
+          <td>@n.Attributes["des"].InnerText</td>
+          <td>@n.InnerText</td>
+        </tr>
+          }
+@*        <tr>
+          <td>1</td>
+          <td>第一行第一个</td>
+          <td><a href="#" class="app-button">修改</a><a href="#" class="app-button">删除</a></td>
+        </tr>*@
+
+      </tbody>
+</table>
+

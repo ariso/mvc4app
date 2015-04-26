@@ -1,0 +1,91 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MColumn> m = ViewData["model"] as List<MColumn>;
+    List<MColumn> p = ViewData["modelp"] as List<MColumn>;
+    List<MColumn> m1 = ViewData["model01"] as List<MColumn>;
+}
+<script type="text/javascript">
+
+    function updColumn() {
+        var s = $("select[name=columnlist] option:selected");
+        if (s.length == 1) {
+            if (s.val() != "") {
+                getColumn(s.val())
+            }
+        } else {
+            alert("请选择一个栏目")
+        }
+    }
+    function delColumn() {
+        var s = $("select[name=columnlist] option:selected");
+        if (s.length == 1) {
+            if (s.val() != "") {
+                
+                $.ajax({
+                    type: "POST",
+                    url: "/Admin/CMS/ColumnDel",
+                    data: { ids: s.val() },
+                    dataType: "json",
+                    success: function (rsp) {
+                        if (rsp.success) {
+                            alert("删除成功")
+                            loadContent('/Admin/CMS/Column')
+                        } else {
+                            alert(rsp.msg)
+                        }
+                    },
+                    error: function (e, s, t) {
+                        //alert('error');
+                        //alert('网络错误');
+                    }
+                });
+            }
+        } else {
+            alert("请选择一个栏目")
+        }
+    }
+
+    //
+    function getColumn(id) {
+        //载入数据
+        loadContent("/Admin/CMS/GetColumn?id=" + id)
+    }
+</script>
+<span class="tip-title">栏目管理</span>
+<div>
+    <p>
+<a href="#" class="app-button" onclick="loadContent('/Admin/CMS/AddColumn')">添加栏目</a>
+<a href="#" class="app-button" onclick="updColumn()">修改</a>
+<a href="#" class="app-button" onclick="delColumn()">删除</a>
+
+    </p>
+    <h4>选中后修改或者删除</h4>
+<select multiple="multiple" name="columnlist" style="height:400px; width:200px;">
+ <optgroup label="普通栏目">
+    @foreach(var n in p){
+            <option value="@n.Id">@n.Name</option>
+        foreach(var n1 in m){
+            if(n1.ParentId==n.Id){
+            <option value="@n1.Id">----@n1.Name</option> 
+            }
+        }
+
+  }
+     @if (p.Count == 0)
+     { 
+      <option>无栏目</option>
+     }
+ </optgroup>
+  <optgroup label="链接栏目">
+  @foreach(var n in m1){
+    <option value="@n.Id">@n.Name</option>
+  }
+     @if (m1.Count == 0)
+     { 
+      <option>无栏目</option>
+     }
+
+  </optgroup>
+</select>
+</div>

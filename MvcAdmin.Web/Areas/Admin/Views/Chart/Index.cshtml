@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+    int ArticleCount=Convert.ToInt32( ViewData["ArticleCount"]);
+    int BaseContenrCount = Convert.ToInt32(ViewData["BaseContenrCount"]);
+    int ColumnCount = Convert.ToInt32(ViewData["ColumnCount"]);
+    int LinkCount = Convert.ToInt32(ViewData["LinkCount"]);
+}
+<script type="text/javascript">
+    //$(function () {
+    //    $('table.highchart').highchartTable();
+    //})
+    $(document).ready(function () {
+        $("table.highchart").highchartTable();
+    });
+</script>
+<span class="tip-title">站内数据统计</span>
+<!--柱形图 data-graph-container-before="1"-->
+<table class="highchart" data-graph-container=".container" data-graph-color-1="#0094ff" data-graph-color-2="#00ff90" data-graph-type="column" style="display:none; ">
+    <caption>站内内容统计</caption>
+    <thead>
+        <tr>
+            <th>类目</th>
+            <th>文章</th>
+            <th>分类</th>
+            <th>友情链接</th>
+            <th>自定义内容</th>
+           </tr> 
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>@ArticleCount</td>
+            <td>@ColumnCount</td>
+            <td>@LinkCount</td>
+            <td>@BaseContenrCount</td>
+        </tr>
+
+    </tbody>
+</table>
+<div class="container"></div>
+<!--折线图-->
+

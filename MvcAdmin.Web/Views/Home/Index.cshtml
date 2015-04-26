@@ -1,0 +1,24 @@
+﻿@using MvcAdmin.Web.MvcHelper
+@using MvcAdmin.Model
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<ul>
+@{
+    List<MAccount> m = ViewData.Model;
+    foreach(var a in m){
+    
+        <li>@a.Id &nbsp; @a.AccountName &nbsp; @a.AccountPwd</li>
+    }
+    
+
+}
+
+</ul>
+@SiteConfig.GetValue("admin.name")
+@SiteConfig.GetValue("admin.pwd")
+@SiteConfig.GetValue("admin.name","des")
+
+
+

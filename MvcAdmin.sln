@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAdmin.Web", "MvcAdmin.Web\MvcAdmin.Web.csproj", "{EECBAFF8-6E0D-46C3-B444-CEEACC63D8D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAdmin.Model", "MvcAdmin.Model\MvcAdmin.Model.csproj", "{4A0AF65E-1765-497D-AC17-FA42595620D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAdmin.Core", "MvcAdmin.Core\MvcAdmin.Core.csproj", "{92ADB94C-67E3-41D5-9F3C-D9D2A115EC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAdmin.DAO", "MvcAdmin.DAO\MvcAdmin.DAO.csproj", "{F2523E49-5203-412B-9C06-F7C02271AE52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAdmin.Service", "MvcAdmin.Service\MvcAdmin.Service.csproj", "{C46FA8DD-5EE7-48D7-AAFE-57335B0F98BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{FE3A9154-9149-4D82-B7C1-1BE688E8D740}"
+	ProjectSection(SolutionItems) = preProject
+		DLL\Autofac.Configuration.dll = DLL\Autofac.Configuration.dll
+		DLL\Autofac.dll = DLL\Autofac.dll
+		DLL\Autofac.Integration.Mvc.dll = DLL\Autofac.Integration.Mvc.dll
+		DLL\MySql.Data.dll = DLL\MySql.Data.dll
+		DLL\Newtonsoft.Json.dll = DLL\Newtonsoft.Json.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EECBAFF8-6E0D-46C3-B444-CEEACC63D8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECBAFF8-6E0D-46C3-B444-CEEACC63D8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECBAFF8-6E0D-46C3-B444-CEEACC63D8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECBAFF8-6E0D-46C3-B444-CEEACC63D8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0AF65E-1765-497D-AC17-FA42595620D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0AF65E-1765-497D-AC17-FA42595620D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0AF65E-1765-497D-AC17-FA42595620D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0AF65E-1765-497D-AC17-FA42595620D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92ADB94C-67E3-41D5-9F3C-D9D2A115EC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92ADB94C-67E3-41D5-9F3C-D9D2A115EC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92ADB94C-67E3-41D5-9F3C-D9D2A115EC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92ADB94C-67E3-41D5-9F3C-D9D2A115EC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2523E49-5203-412B-9C06-F7C02271AE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2523E49-5203-412B-9C06-F7C02271AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2523E49-5203-412B-9C06-F7C02271AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2523E49-5203-412B-9C06-F7C02271AE52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46FA8DD-5EE7-48D7-AAFE-57335B0F98BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46FA8DD-5EE7-48D7-AAFE-57335B0F98BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46FA8DD-5EE7-48D7-AAFE-57335B0F98BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46FA8DD-5EE7-48D7-AAFE-57335B0F98BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

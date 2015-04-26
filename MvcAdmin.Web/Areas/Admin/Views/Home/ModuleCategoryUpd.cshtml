@@ -1,0 +1,50 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    MModuleCategory m = ViewData["model"] as MModuleCategory;
+}
+
+<script type="text/javascript">
+    function UpdModuleCategory() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/UpdModuleCategory",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("#ff input[name=groupName]").val() == "") {
+                    alert('请填写分组名')
+                    return false;
+                }
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('修改成功')
+                    loadContent('/Admin/Home/ModuleCategory')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">修改模块分组</span>
+<form class="f-layout" id="ff">
+    <input type="hidden" name="id"  value="@m.Id"/>
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/ModuleCategory')">返回</a>
+<div class="label">
+<span>分组名:</span>
+<input type="text" name="categoryName" placeholder="分组名" value="@m.CategoryName"/>
+</div>
+<div class="label">
+<span>描述:</span>
+<input type="text" name="des" placeholder="描述"  value="@m.Des"/>
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="UpdModuleCategory()"/>
+</div>
+</form >
+

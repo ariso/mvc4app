@@ -1,0 +1,130 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(function () {
+
+        loadModuleCategoryList();
+        //
+        $("input[type=checkbox][name=isAll]").bind("click", selectCheck)
+    })
+
+    //
+    function loadModuleCategoryList() {
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/ModuleCategoryList",
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    tableInit(rsp.rows)
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    //
+    function tableInit(rows) {
+        var tb = $("#ModuleCategory table.table").find("tbody");
+        var th = $("table.table").find("thead tr th").length;
+        //清空
+        tb.html("");
+        //无记录
+        var tr01 = $("<tr align=\"center\"></tr>");
+        $("<td colspan=\"" + th + "\">loading</td>").appendTo(tr01);
+        tb.append(tr01);
+        
+        if (rows[0] != 'undefined' && rows[0] != null) {
+            //清空
+            tb.html("");
+            for (var i = 0; i < rows.length; i++) {
+                var r = rows[i];
+                var tr = $("<tr  recid=\"" + r.Id + "\"></tr>");
+                $("<td width=\"20px\"><input type=\"checkbox\" tag=\"chk\" /></td>").appendTo(tr);
+                $("<td>" + r.CategoryName + "</td>").appendTo(tr);
+                $("<td>" + r.Des + "</td>").appendTo(tr);
+                $("<td><a href=\"javascript:;\" class=\"app-button\" onclick=\"getModuleCategory(" + r.Id + ")\">修改</a></td>").appendTo(tr);
+                tb.append(tr);
+            }
+        } else {
+            //清空
+            tb.html("");
+            //无记录
+            var tr = $("<tr align=\"center\"></tr>");
+            $("<td colspan=\"" + th + "\">(暂无相关记录)</td>").appendTo(tr);
+            tb.append(tr);
+        }
+    }
+    //
+    function getModuleCategory(id) {
+        //载入数据
+        loadContent("/Admin/Home/GetModuleCategory?id=" + id)
+    }
+    //
+    function delData() {
+        var selectArr = $("input[type=checkbox][tag=chk]:checked");
+        var ids = "";
+        for (var i = 0; i < selectArr.length; i++) {
+            if (i == 0) {
+                ids += $(selectArr[i]).parent().parent().attr("recid");
+
+            } else {
+                ids += "," + $(selectArr[i]).parent().parent().attr("recid");
+            }
+        }
+        if (ids == "") { return; }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/DelModuleCategory",
+            data: { ids: ids },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功");
+                    loadModuleCategoryList();
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+<span class="tip-title">模块分组管理</span>
+<div id="ModuleCategory">
+<table class="table">
+      <caption>
+          <a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/AddModuleCategory')">增加模块分组</a>
+          <a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/Module')">返回模块管理</a>
+          <a href="javascript:;" class="app-button" onclick="loadModuleCategoryList()">刷新</a>
+          <a href="javascript:;" class="app-button" onclick="delData()">删除</a>
+
+      </caption>
+      <thead>
+        <tr>
+          <th width="20px" align="center"><input type="checkbox" name="isAll" /></th>
+          <th align="center">分组名</th>
+          <th align="center">描述</th>
+          <th align="center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+@*        <tr>
+          <td>1</td>
+          <td>第一行第一个</td>
+          <td><a href="#" class="app-button">修改</a><a href="#" class="app-button">删除</a></td>
+        </tr>*@
+
+      </tbody>
+</table>
+</div>

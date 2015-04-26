@@ -1,0 +1,73 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    MBaseContent m = ViewData["model"] as MBaseContent;
+}
+<script type="text/javascript">
+    $(function () {
+        editor = KindEditor.create('textarea[name="content"]');
+    });
+    function updBaseContent() {
+        var id = $("#ff input[name=id]").val();
+        var name = $("#ff input[name=name]").val();
+        var des = $("#ff input[name=des]").val();
+        if (name == "") {
+            alert('请填写区域名')
+            return false;
+        }
+        if (des == "") {
+            alert('请填写描述')
+            return false;
+        }
+        var content = editor.html();
+        if (content == "") {
+            alert('请填写区域内容')
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/UpdbaseContent",
+            data: {
+                id: id,
+                name: name,
+                des: des,
+                content: content
+            },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("修改成功")
+                    loadContent('/Admin/CMS/baseContentList')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">修改自定义区域</span>
+<form class="f-layout" id="ff" method="post">
+    <input type="hidden" name="id"  value="@m.Id"/>
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/CMS/baseContentList')">返回</a>
+<div class="label">
+<span>区域名:</span>
+<input type="text" name="name" placeholder="区域名" value="@m.Name"/><strong></strong>
+</div>
+<div class="label">
+<span>区域描述:</span>
+<input type="text" name="des" placeholder="区域描述" value="@m.Des"/>
+</div>
+<div class="label">
+<span>区域内容:</span>
+        <textarea name="content" style="width: 600px; height: 200px;">@m.Content</textarea>
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="updBaseContent()"/>
+</div>
+</form >
+

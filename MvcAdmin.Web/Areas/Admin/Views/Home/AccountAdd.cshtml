@@ -1,0 +1,94 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MAccountGroup> m= ViewData["model02"] as  List<MAccountGroup>;
+}
+<script type="text/javascript">
+    $(function () {
+
+        $("#ff input[name=name]").bind("blur", CheckUser);
+
+    })
+    function CheckUser() {
+        var name = $("#ff input[name=name]").val();
+        $("#ff input[name=name]").next().html('')
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/GetAccountName",
+            data: { name: name },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    check = true;
+                } else {
+                    //alert('该用户已经存在')
+                    $("#ff input[name=name]").next().html("该用户已经存在");
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function addAccount() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/AddAccount",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("select[name=groupid]").val() == "0") {
+                    alert('请选择分组')
+                    return false;
+                }
+                var pwd = $('#ff').find("input[name=pwd]");
+                if ($(pwd[0]).val().length > 3 && $(pwd[0]).val() != $(pwd[1]).val()) {
+                    alert('密码填写失误')
+                    return false;
+                }
+
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('ok')
+                    loadContent('/Admin/Home/Account')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">增加账户</span>
+<!--增加账户-->
+<form class="f-layout" id="ff">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/Account')">返回</a>
+<div class="label">
+<span>账户名:</span>
+<input type="text" name="name" placeholder="账户名"/><strong></strong>
+</div>
+<div class="label">
+<span>账户分组:</span>
+<select name="groupid">
+    <option value="0">请选择</option>
+    @foreach(var n in m){
+    <option value="@n.Id">@n.GroupName</option>
+     }
+</select>
+</div>
+<div class="label">
+<span>账户密码:</span>
+<input type="password" name="pwd" placeholder="密码" />
+</div>
+<div class="label">
+<span>密码再输入一遍:</span>
+<input type="password" name="pwd" placeholder="密码" />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="addAccount()"/>
+</div>
+</form >

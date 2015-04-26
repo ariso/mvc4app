@@ -1,0 +1,140 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MColumn> m = ViewData["model"] as List<MColumn>;
+    List<MColumn> p = ViewData["modelp"] as List<MColumn>;
+}
+<script>
+    var editor;
+    $(function () {
+        editor = KindEditor.create('textarea[name="content"]');
+    });
+    function AddCMS() {
+        var title = $("input[name=title]").val();
+        var content = editor.html();
+        var columnId = $("select[name=columnlist]").val();
+        var des = $("input[name=des]").val();
+        var key = $("textarea[name=key]").val();
+        var author = $("input[name=author]").val();
+        var source = $("input[name=source]").val();
+        var isShow = $("input[name=isShow]").is(":checked");
+        var isRecommend = $("input[name=isRecommend]").is(":checked");
+        var isTop = $("input[name=isTop]").is(":checked");
+        if (title=="") {
+            alert("请填写标题")
+            return;
+        }
+        if (content == "") {
+            alert("请填写内容")
+            return;
+        }
+        if (columnId == "") {
+            alert("请选择栏目")
+            return;
+        }
+        //if (des == "") {
+        //    alert("")
+        //}
+        //if (key == "") {
+        //    alert("")
+        //}
+        //if (author == "") {
+        //    alert("")
+        //}
+        //if (source == "") {
+        //    alert("")
+        //}
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/ArticleAdd",
+            data: {
+                title: title,
+                content: content,
+                rColumn: columnId,
+                des: des,
+                key: key,
+                author: author,
+                source: source,
+                isShow: isShow,
+                isRecommend: isRecommend,
+                isTop: isTop
+            },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("添加成功")
+                    loadContent('/Admin/CMS/Index')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+<span class="tip-title">增加文章</span>
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/CMS/Index')">返回</a>
+<!--增加账户-->
+<form class="f-layout" id="ff">
+    <div class="label">
+        <span>标题:</span>
+        <input type="text" name="title" placeholder="标题" /><strong></strong>
+    </div>
+    <div class="label">
+        <span>内容:</span>
+        <textarea name="content" style="width: 600px; height: 200px;"></textarea>
+    </div>
+    <div class="label">
+        <span>栏目:</span>
+        <select name="columnlist">
+            @foreach (var n in p)
+            {
+                <optgroup label="@n.Name">
+                    <option value="@n.Id">@n.Name</option>
+                    @foreach (var n1 in m)
+                    {
+                        if (n1.ParentId == n.Id)
+                        {
+                        <option value="@n1.Id">----@n1.Name</option>
+                        }
+                    }
+                </optgroup>
+            }
+            @if (p.Count == 0)
+            { 
+                <option>无栏目</option>
+            }
+        </select>
+    </div>
+
+    <div class="label">
+        <span>关键字:</span>
+        <input type="text" name="key" placeholder="关键字" />
+    </div>
+    <div class="label">
+        <span>描述:</span>
+        <textarea name="des" style="width: 400px; height: 60px;"></textarea>
+    </div>
+    <div class="label">
+        <span>描述:</span>
+        是否显示：<input type="checkbox" name="isShow" checked="checked">
+        是否推荐：<input type="checkbox" name="isRecommend">
+        是否置顶：<input type="checkbox" name="isTop">
+    </div>
+    <div class="label">
+        <span>作者:</span>
+        <input type="text" name="author" placeholder="作者" />
+    </div>
+    <div class="label">
+        <span>来源:</span>
+        <input type="text" name="source" placeholder="来源" />
+    </div>
+    <div class="label">
+        <span>Subject :</span>
+        <input type="button" class="button" value="添加" onclick="AddCMS()" />
+    </div>
+</form>

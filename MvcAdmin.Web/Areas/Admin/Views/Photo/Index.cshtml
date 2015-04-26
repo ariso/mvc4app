@@ -1,0 +1,189 @@
+﻿@{
+    Layout = null;
+    string s = ViewData["model"] as string;
+}
+<script type="text/javascript">
+    //var topNode = "/Photo";
+    var topNode = "@s";
+    $(function () {
+        RequestData(topNode)
+    })
+    function RequestData(dirStr) {
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Photo/GetDir",
+            data: { dirStr: dirStr },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    DirInit(rsp.dirs, rsp.nextdir)
+                    $('#dangqian').html(rsp.indir)
+                    $('input[name=dangqian]').val(rsp.indir)
+                    //rsp.nextdir
+                    PhotoInit(rsp.files, rsp.filestime)
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+
+    function DirInit(Dirs, nextDir) {
+        var dirlist = $("#dirlist");
+        dirlist.html("");
+        if (nextDir != "" && nextDir != " ") {
+            dirlist.append("<li><a href=\"javascript:;\" onclick=\"RequestData('" + nextDir + "')\">返回上一级</a></li>");
+        }
+        if (Dirs[0] != 'undefined' && Dirs[0] != null) {
+            for (var i = 0; i < Dirs.length ; i++) {
+                dirlist.append("<li><input type=\"checkbox\" name=\"dirVal\" value=\""+Dirs[i]+"\"/><a href=\"javascript:;\" onclick=\"RequestData('" + Dirs[i] + "')\">" + Dirs[i] + "</a></li>");
+            }
+        }
+    }
+    function PhotoInit(Photos, times) {
+
+        var photolist = $("#photolist");
+        photolist.html("")
+        if (Photos[0] != 'undefined' && Photos[0] != null) {
+            for (var i = 0; i < Photos.length ; i++) {
+                var temp = "<div class=\"div-fancybox\">" +
+     "<a class=\"fancybox\" href=\"" + Photos[i] + "\" data-fancybox-group=\"gallery\" title=\"文件创建于：" + times[i] + "\">" +
+     "<img src=\"" + Photos[i] + "\" alt=\"\" width=\"150px\" heught=\"150px\"/></a>" +
+     "<a class=\"div-fancybox-a\" href=\"javascript:;\" title='" + Photos[i] + "'>复制</a>" +
+     "<a class=\"div-fancybox-b\" href=\"javascript:;\" onclick=\"DeleteFile('" + Photos[i] + "')\">删除</a></div>";
+                photolist.append(temp);
+            }
+            photolist.append("<div style=\"clear: both;\"></div>");
+        }
+        fancyboxBind()
+        $("a.div-fancybox-a").zclip({
+            path: "@Url.Content("~/Resources/ZeroClipboard/ZeroClipboard.swf")",
+            copy: function () {
+                return $(this).attr('title');
+            }
+        });
+    }
+    function fancyboxBind() {
+
+        $('.fancybox').fancybox({
+            padding: 0,
+            helpers: {
+                title: {
+                    type: 'over'
+                },
+                overlay: {
+                    speedOut: 0
+                }
+            }
+        });
+    }
+    //
+    function uploadFile() {
+        var str = $('input[name=dangqian]').val()
+        //载入数据
+        loadContent("/Admin/Photo/FileUpload?dirStr=" + str)
+    }
+    function createDir() {
+        var str = $('input[name=dangqian]').val()
+        //载入数据
+        loadContent("/Admin/Photo/CreateDir?dirStr=" + str)
+    }
+    
+    //
+    function CopyStr(obj,str) {
+        alert("@Url.Content("~/Resources/ZeroClipboard/ZeroClipboard.swf")")
+        $(obj).zclip({
+            path: "@Url.Content("~/Resources/ZeroClipboard/ZeroClipboard.swf")",
+            copy: function () {
+                alert(str)
+                return str;
+            }
+        });
+    }
+    function DeleteFile(fileStr) {
+        if (fileStr == "") {
+            alert("请选择有效文件");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Photo/DelFile",
+            data: { fileStr: fileStr },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功")
+                    loadContent('/Admin/Photo/Index')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function delateDir() {
+        var list = $("input[name=dirVal]:checked");
+        var str = "";
+        for (var i = 0; i < list.length ; i++) {
+            if (i == 0) {
+                str += $(list[i]).val();
+            } else {
+                str += "|" + $(list[i]).val();
+            }
+        }
+        if (str == "") {
+            alert("请选择有效目录");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Photo/DelDir",
+            data: { dirStr: str },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功")
+                    loadContent('/Admin/Photo/Index')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+
+<span class="tip-title">相册管理</span>
+<span class="tip-point">当前目录：</span>
+<span class="tip-prompt" id="dangqian"></span>
+<input type="hidden" value="/Photo" name="dangqian" />
+<a href="javascript:;" class="app-button" onclick="uploadFile()">上传照片到当前目录</a>
+<a href="javascript:;" class="app-button" onclick="createDir()">在当前目录新建目录</a>
+<a href="javascript:;" class="app-button" onclick="delateDir()">删目录（包括目录下文件）</a>
+
+<ul class="dirFile" id="dirlist">
+    @*<li><a href="/0319/index.html">文件夹</a></li>*@
+</ul>
+
+<div id="photolist">
+
+    @*<div class="div-fancybox">
+        <a class="fancybox" href="@Url.Content("~/Resources/Photo/1_b.jpg")" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
+            <img src="@Url.Content("~/Resources/Photo/1_s.jpg")" alt="" />
+        </a>
+        <a class="div-fancybox-a" href="#">复制</a>
+        <a class="div-fancybox-b" href="#">删除</a>
+    </div>
+    
+    <div style="clear: both;"></div>*@
+</div>

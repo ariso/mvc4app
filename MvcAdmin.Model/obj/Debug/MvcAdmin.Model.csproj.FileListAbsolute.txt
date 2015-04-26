@@ -1,0 +1,4 @@
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Model\bin\Debug\MvcAdmin.Model.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Model\bin\Debug\MvcAdmin.Model.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Model\obj\Debug\MvcAdmin.Model.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Model\obj\Debug\MvcAdmin.Model.pdb

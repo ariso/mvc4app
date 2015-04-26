@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+    bool b = (bool)ViewData["isload"];
+}
+@if(b){
+<div class="menus unselect" id="dashboard">
+    	<div class="menu-m "><div class="ico ico-2"></div>控制面板 <div class="ico-right"></div></div>
+        <div class="menu-c">
+        	<div class="menu" onclick="loadContent('/Admin/home/Account')"><div class="ico ico-6"></div>账户管理</div>
+			<div class="menu" onclick="loadContent('/Admin/home/Module')"><div class="ico ico-3"></div>模块管理</div>
+            <div class="menu" onclick="loadContent('/Admin/home/Power')"><div class="ico ico-3"></div>模块权限管理</div>
+            <div class="menu" onclick="loadContent('/Admin/home/Site')"><div class="ico ico-3"></div>系统管理</div>
+            <div class="menu" onclick="loadContent('/Admin/configure/index')"><div class="ico ico-3"></div>配置管理</div>
+        </div>
+</div>
+}

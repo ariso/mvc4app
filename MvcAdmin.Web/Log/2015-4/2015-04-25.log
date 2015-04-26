@@ -1,0 +1,599 @@
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 11:00:14
+发生异常页：http://localhost:62761/
+异常信息：无法绑定由多个部分组成的标识符 "c.id"。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList(String keyword, Int32 groupid, Int32 page, Int32 pageSize) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 42
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 17
+   在 MvcAdmin.Web.Controllers.HomeController.Index() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Controllers\HomeController.cs:行号 29
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 11:06:44
+发生异常页：http://localhost:62761/
+异常信息：无法绑定由多个部分组成的标识符 "c.id"。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList(String keyword, Int32 groupid, Int32 page, Int32 pageSize) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 42
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 17
+   在 MvcAdmin.Web.Controllers.HomeController.Index() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Controllers\HomeController.cs:行号 29
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 11:08:05
+发生异常页：http://localhost:62761/
+异常信息：无法绑定由多个部分组成的标识符 "e.id"。
+无法绑定由多个部分组成的标识符 "c.id"。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList(String keyword, Int32 groupid, Int32 page, Int32 pageSize) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 42
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 17
+   在 MvcAdmin.Web.Controllers.HomeController.Index() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Controllers\HomeController.cs:行号 29
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 11:08:53
+发生异常页：http://localhost:62761/
+异常信息：无法绑定由多个部分组成的标识符 "e.id"。
+无法绑定由多个部分组成的标识符 "c.id"。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList(String keyword, Int32 groupid, Int32 page, Int32 pageSize) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 42
+   在 MvcAdmin.Service.MSSQLServer.SAccount.GetAccountList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\SAccount.cs:行号 17
+   在 MvcAdmin.Web.Controllers.HomeController.Index() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Controllers\HomeController.cs:行号 29
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:02:42
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：无法将类型为“System.Data.SqlClient.SqlParameter”的对象强制转换为类型“MySql.Data.MySqlClient.MySqlParameter”。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MySqlHelper.PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, String cmdText, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 629
+   在 MvcAdmin.Core.MySqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 592
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 52
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 77
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:02:44
+发生异常页：http://localhost:62761/Admin/CMS/Column
+异常信息：'?' 附近有语法错误。
+'?' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SColumn.GetMcolumnList(Boolean isNode) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SColumn.cs:行号 79
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.Column() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 123
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:31:45
+发生异常页：http://localhost:62761/Admin/CMS/baseContentList
+异常信息：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[cms_baseContent]' at line 1
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MySqlHelper.Query(String SQLString) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 358
+   在 MvcAdmin.Service.MSSQLServer.SBaseContent.GetBaseContentList()
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.baseContentList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 287
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:33:27
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：无法将类型为“System.Data.SqlClient.SqlParameter”的对象强制转换为类型“MySql.Data.MySqlClient.MySqlParameter”。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MySqlHelper.PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, String cmdText, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 629
+   在 MvcAdmin.Core.MySqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 592
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 52
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 77
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:33:48
+发生异常页：http://localhost:62761/Admin/CMS/baseContentList
+异常信息：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[cms_baseContent]' at line 1
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MySqlHelper.Query(String SQLString) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 358
+   在 MvcAdmin.Service.MSSQLServer.SBaseContent.GetBaseContentList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SBaseContent.cs:行号 120
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.baseContentList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 287
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:35:08
+发生异常页：http://localhost:62761/Admin/CMS/baseContentList
+异常信息：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[cms_baseContent]' at line 1
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MySqlHelper.Query(String SQLString) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MySqlHelper.cs:行号 358
+   在 MvcAdmin.Service.MSSQLServer.SBaseContent.GetBaseContentList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SBaseContent.cs:行号 120
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.baseContentList() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 287
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:37:22
+发生异常页：http://localhost:62761/Admin/CMS/AddLink
+异常信息：不能将值 NULL 插入列 'linkImg'，表 'MVCAdmin.dbo.cms_link'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.ExecuteSql(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 448
+   在 MvcAdmin.Service.MSSQLServer.SLink.AddLink(MLink m) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SLink.cs:行号 26
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.AddLink(MLink m) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 226
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:38:23
+发生异常页：http://localhost:62761/Admin/CMS/Column
+异常信息：'?' 附近有语法错误。
+'?' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SColumn.GetMcolumnList(Boolean isNode) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SColumn.cs:行号 79
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.Column() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 123
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:40:49
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：关键字 'top' 附近有语法错误。
+关键字 'top' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count)
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count)
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 13:42:22
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：关键字 'top' 附近有语法错误。
+关键字 'top' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 52
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 77
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 14:01:42
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：'@pageSize' 附近有语法错误。
+'@count' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count)
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count)
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 14:03:32
+发生异常页：http://localhost:62761/Admin/CMS/ArticleList
+异常信息：'@pageSize' 附近有语法错误。
+'@count' 附近有语法错误。
+错误源：MvcAdmin.Core
+堆栈信息：   在 MvcAdmin.Core.MSSqlHelper.Query(String SQLString, Object[] cmdParms) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Core\MSSqlHelper.cs:行号 601
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 52
+   在 MvcAdmin.Service.MSSQLServer.SArticle.GetArticleList(Int32 columnId, String keyStr, Boolean isShow, Int32 pageSize, Int32 pageIndex, Int32& count) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Service\MSSQLServer\CMS\SArticle.cs:行号 77
+   在 MvcAdmin.Web.Areas.Admin.Controllers.CMSController.ArticleList(Int32 columnid, Int32 page, String keystr) 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Controllers\CMSController.cs:行号 40
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 15:01:26
+发生异常页：http://localhost:62761/
+异常信息：未能加载文件或程序集“WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。
+错误源：System.Web.Optimization
+堆栈信息：   在 System.Web.Optimization.JsMinify.Process(BundleContext context, BundleResponse response)
+   在 System.Web.Optimization.Bundle.ApplyTransforms(BundleContext context, String bundleContent, IEnumerable`1 bundleFiles)
+   在 System.Web.Optimization.Bundle.GenerateBundleResponse(BundleContext context)
+   在 System.Web.Optimization.Bundle.GetBundleResponse(BundleContext context)
+   在 System.Web.Optimization.BundleResolver.GetBundleContents(String virtualPath)
+   在 System.Web.Optimization.AssetManager.EliminateDuplicatesAndResolveUrls(IEnumerable`1 paths)
+   在 System.Web.Optimization.AssetManager.DeterminePathsToRender(IEnumerable`1 assets)
+   在 System.Web.Optimization.AssetManager.RenderScripts(IEnumerable`1 assets)
+   在 System.Web.Optimization.AssetManager.RenderExplicit(Boolean forStyles, String[] paths)
+   在 System.Web.Optimization.Scripts.Render(String[] paths)
+   在 ASP._Page_Views_Shared__Layout_cshtml.Execute() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Views\Shared\_Layout.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 15:06:01
+发生异常页：http://localhost:62761/
+异常信息：未能加载文件或程序集“WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。找到的程序集清单定义与程序集引用不匹配。 (异常来自 HRESULT:0x80131040)
+错误源：System.Web.Optimization
+堆栈信息：   在 System.Web.Optimization.JsMinify.Process(BundleContext context, BundleResponse response)
+   在 System.Web.Optimization.Bundle.ApplyTransforms(BundleContext context, String bundleContent, IEnumerable`1 bundleFiles)
+   在 System.Web.Optimization.Bundle.GenerateBundleResponse(BundleContext context)
+   在 System.Web.Optimization.Bundle.GetBundleResponse(BundleContext context)
+   在 System.Web.Optimization.BundleResolver.GetBundleContents(String virtualPath)
+   在 System.Web.Optimization.AssetManager.EliminateDuplicatesAndResolveUrls(IEnumerable`1 paths)
+   在 System.Web.Optimization.AssetManager.DeterminePathsToRender(IEnumerable`1 assets)
+   在 System.Web.Optimization.AssetManager.RenderScripts(IEnumerable`1 assets)
+   在 System.Web.Optimization.AssetManager.RenderExplicit(Boolean forStyles, String[] paths)
+   在 System.Web.Optimization.Scripts.Render(String[] paths)
+   在 ASP._Page_Views_Shared__Layout_cshtml.Execute() 位置 d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Views\Shared\_Layout.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 15:50:42
+发生异常页：http://localhost:62761/Admin/home/index
+异常信息：d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Views\Shared\_Layout.cshtml(37): error CS0103: 当前上下文中不存在名称“Scripts”
+错误源：System.Web
+堆栈信息：   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(String virtualPath, HttpContextBase httpContext, Func`2 virtualPathExists, DisplayModeProvider displayModeProvider, IDisplayMode displayMode)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+
+
+-------------  异常信息   ---------------------------------------------------------------
+发生时间：2015/4/25 15:50:47
+发生异常页：http://localhost:62761/Admin/home/index
+异常信息：d:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.Web\Areas\Admin\Views\Shared\_Layout.cshtml(37): error CS0103: 当前上下文中不存在名称“Scripts”
+错误源：System.Web
+堆栈信息：   在 System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(String virtualPath, HttpContextBase httpContext, Func`2 virtualPathExists, DisplayModeProvider displayModeProvider, IDisplayMode displayMode)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+-----------------------------------------------------------------------------------------
+

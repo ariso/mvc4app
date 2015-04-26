@@ -1,0 +1,26 @@
+﻿@using MvcAdmin.Web.MvcHelper
+@using MvcAdmin.Model
+@{
+    ViewBag.Title = "red";
+
+
+}
+<h2>Index</h2>
+<ul>
+@{
+    List<MAccount> m = ViewData.Model;
+    foreach(var a in m){
+    
+        <li>@a.Id &nbsp; @a.AccountName &nbsp; @a.AccountPwd</li>
+    }
+    
+
+}
+
+</ul>
+@*@{string s = Html.GetGlobalResourceAsString("Site", "lww01");}
+@s
+@Html.GetGlobalResourceAsString("Language", "Greeting4Chris")*@
+
+
+

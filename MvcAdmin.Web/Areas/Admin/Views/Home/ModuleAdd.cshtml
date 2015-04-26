@@ -1,0 +1,93 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MModuleCategory> m = ViewData["model02"] as List<MModuleCategory>;
+}
+<script type="text/javascript">
+    $(function () {
+
+        $("#ff input[name=ModuleName]").bind("blur", CheckModule);
+
+    })
+    function CheckModule() {
+        var name = $("#ff input[name=ModuleName]").val();
+        $("#ff input[name=ModuleName]").next().html('')
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/GetModuleName",
+            data: { ModuleName: name },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    
+                } else {
+                    //alert('该用户已经存在')
+                    $("#ff input[name=ModuleName]").next().html("该模块名已经存在");
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function addModule() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/AddModule",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("input[name=ModuleName]").val() == "") {
+                    alert('请填写模块名')
+                    return false;
+                }
+                if ($("input[name=CommandParameter]").val() == "") {
+                    alert('请填写模块参数')
+                    return false;
+                }
+                if ($("select[name=CategoryId]").val() == "0") {
+                    alert('请选择分组')
+                    return false;
+                }
+
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('ok')
+                    loadContent('/Admin/Home/Module')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">添加模块</span>
+<!--增加账户-->
+<form class="f-layout" id="ff">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/Module')">返回</a>
+<div class="label">
+<span>模块名:</span>
+<input type="text" name="ModuleName" placeholder="模块名"/><strong></strong>
+</div>
+<div class="label">
+<span>账户分组:</span>
+<select name="CategoryId">
+    <option value="0">请选择</option>
+    @foreach(var n in m){
+    <option value="@n.Id">@n.CategoryName</option>
+     }
+</select>
+</div>
+<div class="label">
+<span>模块参数:</span>
+<input type="text" name="CommandParameter" placeholder="模块参数"  />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="addModule()"/>
+</div>
+</form >

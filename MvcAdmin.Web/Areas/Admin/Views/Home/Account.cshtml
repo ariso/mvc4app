@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(function () {
+        //
+        initP();
+
+        loadAccountList('', 1,0);
+
+        $("input[type=checkbox][name=isAll]").bind("click", selectCheck)
+    })
+    
+    //
+    function loadAccountList(key, page, groupid) {
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/AccountList",
+            data: { key: key, page: page, groupid: groupid },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    tableInit(rsp.rows, rsp.count, page)
+                    //
+                    var totalPages = (rsp.count + 10 - 1) / 10
+                    //
+                    changPage(totalPages, page, key, groupid);
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    //
+    function tableInit(rows, count, page) {
+        $("input[type=checkbox][name=isAll]").attr("checked", false);
+
+        var tb = $("#Account table.table").find("tbody");
+        var th = $("table.table").find("thead tr th").length;
+        //清空
+        tb.html("");
+        //无记录
+        var tr01 = $("<tr align=\"center\"></tr>");
+        $("<td colspan=\"" + th + "\">loading</td>").appendTo(tr01);
+        tb.append(tr01);
+
+        if (rows[0] != 'undefined' && rows[0] != null) {
+            //清空
+            tb.html("");
+            for (var i = 0; i < rows.length; i++) {
+                var r = rows[i];
+                var tr = $("<tr  recid=\"" + r.Id + "\"></tr>");                
+                $("<td width=\"20px\"><input type=\"checkbox\" tag=\"chk\" /></td>").appendTo(tr);
+                $("<td width=\"35px\">" + r.Id + "</td>").appendTo(tr);
+                $("<td>" + r.AccountName + "</td>").appendTo(tr);
+                $("<td>" + r.AccountGrounp.GroupName + "</td>").appendTo(tr);
+                $("<td><a href=\"javascript:;\" class=\"app-button\" onclick=\"getAccount(" + r.Id + ")\">修改</a></td>").appendTo(tr);
+                tb.append(tr);
+            }
+        } else {
+            //清空
+            tb.html("");
+            //无记录
+            var tr = $("<tr align=\"center\"></tr>");
+            $("<td colspan=\"" + th + "\">(暂无相关记录)</td>").appendTo(tr);
+            tb.append(tr);
+        }
+    }
+    //
+    function changPage(totalPages, currentPage, key, groupid) {
+        //操作分页插件
+        $('ul.pagination').jqPaginator('option', {
+            totalPages: totalPages,/*总数 */
+            visiblePages: 8,/*可见分页面*/
+            currentPage: currentPage,
+            onPageChange: function (num, type) {
+                //$('#p1').text(type + '：' + num);change：6
+                //改变数据
+                loadAccountList(key, num, groupid)
+            }
+        });
+    }
+    //
+    function getAccount(id) {
+        //载入数据
+        loadContent("/Admin/Home/GetAccount?id=" + id)
+    }
+   
+    //
+    function delData() {
+        var selectArr = $("input[type=checkbox][tag=chk]:checked");
+        var ids = "";
+        for (var i = 0; i < selectArr.length; i++) {
+            if (i == 0) {
+                ids += $(selectArr[i]).parent().parent().attr("recid");
+                
+            } else {
+                ids += "," + $(selectArr[i]).parent().parent().attr("recid");
+            }
+        }
+        if (ids == "") { return; }
+        
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/DelAccount",
+            data: { ids: ids},
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功")
+                    loadAccountList('', 1, 0);
+                } else {
+                    alert("删除失败")
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+   <span class="tip-title">账户管理</span>
+<!--表格-->
+<div id="Account">
+
+<table class="table">
+      <caption>
+          <a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/AddAccount')">增加账户</a>
+          <a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/AccountGroup')">管理用户分组</a>
+          <a href="javascript:;" class="app-button" onclick="loadAccountList('',1)">刷新</a>
+          <a href="javascript:;" class="app-button" onclick="delData()">删除</a>
+      </caption>
+      <thead>
+        <tr>
+          <th width="20px" ><input type="checkbox" name="isAll" /></th>
+          <th align="center" width="35px">编号</th>
+          <th align="center">账户名</th>
+          <th align="center">分组</th>
+          <th align="center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+@*        <tr>
+          <td>1</td>
+          <td>第一行第一个</td>
+          <td><a href="#" class="app-button">修改</a><a href="#" class="app-button">删除</a></td>
+        </tr>*@
+
+      </tbody>
+</table>
+    <ul class="pagination"></ul>
+
+</div>

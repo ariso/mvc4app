@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+    string s=ViewData["model"] as string;
+}
+<script type="text/javascript">
+    function createDir() {
+        var dirName = $("#ff input[name=dirName]").val();
+        var dirStr = $("#ff input[name=dirStr]").val();
+        if (dirName == "")
+        {
+            alert("请填写目录名")
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Photo/DirCreate",
+            data: { dirName: dirName, dirStr: dirStr },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("创建成功")
+                    loadContent('/Admin/Photo/Index')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function getDirName() {
+        var d = new Date(), str = '';
+        str += d.getFullYear()+"-"; //获取当前年份 
+        str += d.getMonth() + 1 + "-"; //获取当前月份（0——11） 
+        str += d.getDate() + "-";
+        str += d.getHours() + "-";
+        str += d.getMinutes() + "-";
+        str += d.getSeconds();
+        $("input[name=dirName]").val(str);
+    }
+</script>
+<span class="tip-title">创建目录与</span>
+<span class="tip-point">@s</span>
+<!--增加账户-->
+<form class="f-layout" id="ff">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Photo/Index')">返回</a>
+    <input type="hidden" value="@s" name="dirStr" />
+<div class="label">
+<span>目录名:</span>
+<input type="text" name="dirName" placeholder="目录名"/><strong></strong><a href="javascript:;" onclick="getDirName()">根据系统时间取目录名</a>
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="创建" onclick="createDir()"/>
+</div>
+</form >

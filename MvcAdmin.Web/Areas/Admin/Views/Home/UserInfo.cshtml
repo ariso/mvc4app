@@ -1,0 +1,22 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    int id = int.Parse(ViewData["userid"].ToString());
+    MAccount m=ViewData["user"] as MAccount;
+    if(id>0){
+    //非超级管理员
+    }else{
+    //超级管理员
+    }
+}
+<span class="tip-title">个人信息</span>
+
+<div class="f-layout">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/AlertPwd')">修改密码</a>
+<div class="label">
+用户名:@m.AccountName
+<br />
+用户名:@m.AccountName
+<br />
+</div>
+</div>

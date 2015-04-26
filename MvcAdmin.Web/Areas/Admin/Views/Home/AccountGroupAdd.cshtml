@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(function () {
+
+        $("#ff input[name=groupName]").bind("blur", CheckGroupName);
+
+    })
+    function CheckGroupName() {
+        var groupName = $("#ff input[name=groupName]").val();
+        $("#ff input[name=groupName]").next().html('')
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/GetAccountName",
+            data: { groupName: groupName },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    check = true;
+                } else {
+                    //alert('该用户已经存在')
+                    $("#ff input[name=groupName]").next().html("该分组已经存在");
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function addAccountGroup() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/AddAccountGroup",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("#ff input[name=groupName]").val() == "") {
+                    alert('请填写分组名')
+                    return false;
+                }
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('添加成功')
+                    loadContent('/Admin/Home/AccountGroup')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">添加账户分组</span>
+<form class="f-layout" id="ff" >
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/AccountGroup')">返回</a>
+<div class="label">
+<span>分组名:</span>
+<input type="text" name="GroupName" placeholder="分组名"/><strong></strong>
+</div>
+<div class="label">
+<span>描述:</span>
+<input type="text" name="Des" placeholder="描述" />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="addAccountGroup()"/>
+</div>
+</form >
+

@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    function AlterPwd() {
+        var pwd1 = $("input[name=pwd1]").val();
+        var pwd2 = $("input[name=pwd2]").val();
+        var pwd3 = $("input[name=pwd3]").val();
+        if(pwd1==""){
+            alert("密码不能为空");
+            return;
+        }
+        if(pwd2==""){
+            alert("新密码不能为空");
+            return;
+        }
+        if(pwd3==""){
+            alert("新密码不能为空");
+            return;
+        }
+        if (pwd3 != pwd2) {
+            alert("新密码不一致");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/AlertPwd",
+            data: { oldPwd: pwd1, newPwd: pwd2 },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert('修改成功')
+                    $("#fff #fanhui").trigger("click");
+                } else {
+                    alert('修改失败')
+                    //alert('error');
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+<span class="tip-title">修改密码</span>
+<form class="f-layout" id="fff">
+<a href="javascript:;" id="fanhui" class="app-button" onclick="loadContent('/Admin/Home/Default')">返回</a>
+
+<div class="label">
+<span>旧密码:</span>
+<input type="password" name="pwd1" placeholder="旧密码" />
+</div>
+<div class="label">
+<span>新密码:</span>
+<input type="password" name="pwd2" placeholder="新密码" />
+</div>
+<div class="label">
+<span>新密码再输入一遍:</span>
+<input type="password" name="pwd3" placeholder="新密码再输入一遍" />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="AlterPwd()"/>
+</div>
+</form >

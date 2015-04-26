@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(function () {
+
+        $("#ff input[name=categoryName]").bind("blur", CheckCategoryName);
+
+    })
+    function CheckCategoryName() {
+        var groupName = $("#ff input[name=categoryName]").val();
+        $("#ff input[name=categoryName]").next().html('')
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/GetModuleCategoryName",
+            data: { categoryName: groupName },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    //check = true;
+                } else {
+                    //alert('该用户已经存在')
+                    $("#ff input[name=categoryName]").next().html("该分组已经存在");
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function addModuleCategory() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/AddModuleCategory",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("#ff input[name=categoryName]").val() == "") {
+                    alert('请填写分组名')
+                    return false;
+                }
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('添加成功')
+                    loadContent('/Admin/Home/ModuleCategory')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">添加模块分组</span>
+<form class="f-layout" id="ff">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Home/ModuleCategory')">返回</a>
+<div class="label">
+<span>分组名:</span>
+<input type="text" name="categoryName" placeholder="分组名"/><strong></strong>
+</div>
+<div class="label">
+<span>描述:</span>
+<input type="text" name="des" placeholder="描述" />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="addModuleCategory()"/>
+</div>
+</form >
+

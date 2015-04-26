@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>admin index</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<style type="text/css">
+*{margin:0;padding:0}
+html, body{height:100%;width:100%;font:12px/1.4 Verdana,sans-serif}
+/*左右结构，右边上下结构*/
+.left{width:220px;background:#1C2530;float:left;position:fixed;min-height:100%;}
+.left .upper{height:90px;}
+.left .upper .mark{ padding-top:35px; padding-left:20px;}
+.left .upper .mark .logo{ background:url(images/logo.png) no-repeat; width:32px;height:32px; float:left;}
+.left .upper .mark .txt{ font-size:16px; font-weight:bold; color:#FFF; float:left; line-height:32px; margin-left:10px;}
+.left .lower{color:#CCC;margin-top:5px;}
+.left .lower .mark{padding:5px; border:1px solid #666; height:20px;width:170px; line-height:20px; margin-left:15px;margin-bottom:15px; font-weight:bold;color:#FFF; font-size:14px; background-color:#222222;}
+.left .lower .mark .ico{width:16px; height:16px; float:left; background-color:#FFF; margin-left:2px; margin-right:2px;}
+.left .lower .menus{margin-top:5px;}
+.left .lower .menu-m{padding:5px; border:1px solid #666; height:20px;width:170px; line-height:20px; margin-left:15px; font-size:12px;cursor:pointer;}
+.left .lower .menu-m .ico-right{background:url(images/arrow-right.png) no-repeat; width:10px; height:10px; float:right; margin-top:5px;}
+.left .lower .menu-m .ico-lower{background:url(images/arrow-lower.png) no-repeat; width:10px; height:10px; float:right;margin-top:5px;}
+.left .lower .menu-m .ico{background:url(images/arrow-lower.png) no-repeat; width:16px; height:16px; float:left;margin-top:5px; margin-left:2px; margin-right:2px;}
+.left .lower .menu-c{ display:none;padding:5px; background-color:#222222; border-bottom:1px solid #666; border-left:1px solid #666; border-right:1px solid #666; width:170px; margin-left:15px;}
+.left .lower .menu-c .menu{padding:5px; height:20px;width:160px; line-height:20px; margin-left:5px; font-size:12px;cursor:pointer;}
+.right{background:#F2F2F2;margin-left:220px;min-height: 100%;}
+.left .lower .menu-c .menu .ico{width:16px; height:16px; float:left; background-color:#FFF; margin-left:2px; margin-right:2px;}
+.right .upper{height:90px;}
+.right .upper .mark{padding-top:30px; padding-left:20px;font-size:26px;font-family:Arial, sans-serif; color:#222222; float:left; line-height:32px;}
+.right .upper .menus{float:right;padding-top:25px;padding-right:20px;}
+.right .upper .menus .menu{color:#66ccfF;height:20px; float:left; margin-left:3px; margin-right:3px;}
+.right .upper .menus .menu a{color:#6699Ff;border:1px solid #dbdbdb; background-color:#FFF;padding:5px; border-radius:5px; text-decoration:none;}
+.right .upper .menus .menu a:hover{border:1px solid #63F;}
+.right .upper .menus .menu a:visited{color:#6699Ff;}
+.right .lower{min-height:500px;background:#FFF; border:1px solid #dbdbdb; margin-left:20px; margin-right:20px;border-radius:5px;}
+</style>
+</head>
+<body>
+<div class="left">
+<div class="upper">
+	<div class="mark"><div class="logo"></div><div class="txt">my lww</div></div>
+</div>
+<div class="lower">
+	<div class="mark"><div class="ico"></div>控制面板</div>
+    <div class="menus">
+    	<div class="menu-m"><div class="ico"></div>2222222222222<div class="ico-right"></div></div>
+        <div class="menu-c">
+        	<div class="menu"><div class="ico"></div>222222222</div>
+			<div class="menu">222222222</div>
+        </div>
+    </div>
+    <div class="menus">
+    	<div class="menu-m">333333333<div class="ico-lower"></div></div>
+        <div class="menu-c" style="display:block;">
+        	<div class="menu"><div class="ico"></div>222222222</div>
+			<div class="menu">222222222</div>
+        </div>
+    </div>
+    <div class="menus">
+    	<div class="menu-m">333333333<div class="ico-lower"></div></div>
+    </div>
+        <div class="menus">
+    	<div class="menu-m">444444444</div>
+    </div>
+
+</div>
+</div>
+<div class="right">
+<div class="upper">
+	<div class="mark">hello word!</div>
+	<div class="menus">
+    	<div class="menu">1111</div><div class="menu">|</div><div class="menu"><a href="javascript:;">退 出</a></div>
+    </div>
+</div>
+<div class="lower"></div>
+</div>
+</body>
+</html>

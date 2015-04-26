@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<site>
+  <item name="admin.name" des="名字">admin</item>
+  <item name="admin.pwd" des="密码">21232f297a57a5a743894a0e4a801fc3</item>
+  <item name="theme.value" des="主题">default</item><![CDATA[站点信息]]><item name="site.name" des="网站名">农夫CMS</item><item name="site.description" des="网站描述">网站</item><item name="site.keywords" des="关键字">网站，cms</item><item name="site.copyright" des="版权信息">这个是版权</item><![CDATA[站点信息 end]]></site>

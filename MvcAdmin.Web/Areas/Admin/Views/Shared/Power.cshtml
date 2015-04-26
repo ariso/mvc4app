@@ -1,0 +1,50 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    bool b = (bool)ViewData["isload"];
+    List<MModule> m = ViewData["model"] as List<MModule>;
+    List<MModuleCategory> m1 = ViewData["model01"] as List<MModuleCategory>;
+}
+@if(b){
+    int flag=0;
+    foreach(var n in m1){
+    <text>
+    <div class="menus unselect">
+    	<div class="menu-m"><div class="ico ico-2"></div>@n.CategoryName<div class="ico-right"></div></div>
+        
+        <div class="menu-c">
+        @foreach(var n1 in m){
+            if(n1.CategoryId==n.Id){
+            <text>
+            <div class="menu" onclick="loadContent('@n1.CommandParameter')"><div class="ico ico-3"></div>@n1.ModuleName</div>
+            </text>
+                flag++;
+            }   
+        }
+            @if (flag==0) { 
+            <text>
+            <div class="menu"><div class="ico ico-3"></div>暂时没有</div>
+            </text>
+            }
+        </div>
+        @{flag = 0;}
+    </div>
+    </text>
+    }
+    
+    
+    
+@*<div class="menus unselect">
+    	<div class="menu-m"><div class="ico ico-2"></div>333333333<div class="ico-right"></div></div>
+        <div class="menu-c">
+        	<div class="menu"><div class="ico ico-3"></div>222222222</div>
+			<div class="menu"><div class="ico ico-3"></div>222222222</div>
+        </div>
+    </div>
+   <div class="menus unselect">
+    	<div class="menu-m">333333333<div class="ico-right"></div></div>
+    </div>
+    <div class="menus unselect">
+    	<div class="menu-m">444444444</div>
+</div>*@
+}

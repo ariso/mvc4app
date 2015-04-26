@@ -1,0 +1,67 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MBaseContent> m = ViewData["model"] as List<MBaseContent>;
+}
+
+<script type="text/javascript">
+    function DelBaseContent(obj, id) {
+        //
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/DelbaseContent",
+            data: { ids: id },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功");
+                    $(obj).parent().parent().remove()
+
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    //
+    function getBaseContent(id) {
+        //载入数据
+        loadContent("/Admin/CMS/GetbaseContent?id=" + id)
+    }
+</script>
+<span class="tip-title">自定义区域管理</span>
+<div id="v1">
+<table class="table">
+      <caption>
+          <a href="javascript:;" class="app-button" onclick="loadContent('/Admin/CMS/BaseContentAdd')">增加自定义区域</a>
+      </caption>
+      <thead>
+        <tr>
+          <th width="30px" align="center">全选</th>
+          <th align="center">区域名</th>
+          <th align="center">区域描述</th>
+          <th align="center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+          @foreach(var i in m){
+          <text>
+          <tr>
+          <td>@i.Id</td>
+          <td>@i.Name</td>
+          <td>@i.Des</td>
+          <td>
+              <a href="javascript:;" class="app-button" onclick="getBaseContent(@i.Id)">修改</a>
+              <a href="javascript:;" class="app-button" onclick="DelBaseContent(this,@i.Id)">删除</a></td>
+        </tr>
+          </text>
+          }
+
+      </tbody>
+</table>
+
+</div>

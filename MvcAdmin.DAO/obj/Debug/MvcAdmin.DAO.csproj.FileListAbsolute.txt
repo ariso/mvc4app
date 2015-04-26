@@ -1,0 +1,7 @@
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\obj\Debug\MvcAdmin.DAO.csprojResolveAssemblyReference.cache
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\bin\Debug\MvcAdmin.DAO.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\bin\Debug\MvcAdmin.DAO.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\bin\Debug\MvcAdmin.Model.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\bin\Debug\MvcAdmin.Model.pdb
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\obj\Debug\MvcAdmin.DAO.dll
+D:\vs2010Workspace\项目\MvcAdmin\MvcAdmin.DAO\obj\Debug\MvcAdmin.DAO.pdb

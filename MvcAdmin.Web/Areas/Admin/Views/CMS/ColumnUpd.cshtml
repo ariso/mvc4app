@@ -1,0 +1,93 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    //下拉取值
+    List<MColumn> m = ViewData["model"] as List<MColumn>;
+    MColumn m1 = ViewData["model01"] as MColumn;
+}
+<script type="text/javascript">
+    $(function () {
+        IsNode();
+        $("input[name=isLink]").bind("click", IsNode)
+    })
+    function IsNode() {
+        var a1 = $("#nodeview");
+        var b1 = $("#linkview");
+        var c1 = $("input[name=isLink]");
+        if (c1.is(":checked")) {
+            a1.show();
+            b1.hide();
+        } else {
+            b1.show();
+            a1.hide();
+        }
+    }
+    function UpdColumn() {
+        var id = $("input[name=id]").val();
+        var name = $("input[name=name]").val();
+        var isNode = $("input[name=isLink]").is(":checked");
+        var parentId = $("select[name=isNode]").val();
+        var link = $("input[name=link]").val();
+        //isNode = !isNode;
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/ColumnUpd",
+            data: { id:id,name: name, isNode: isNode, parentId: parentId, link: link },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("修改成功")
+                    loadContent('/Admin/CMS/Column')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+<span class="tip-title">修改栏目</span>
+<a href="#" class="app-button" onclick="loadContent('/Admin/CMS/Column')">返回</a>
+<!--修改栏目-->
+<form class="f-layout" id="ff">
+    <input type="hidden" name="id" value="@m1.Id"/>
+    <div class="label">
+        <span>栏目标题:</span>
+        <input type="text" name="name" placeholder="栏目标题" value="@m1.Name"/><strong></strong>
+    </div>
+    <div class="label">
+        <span>是否节点:</span>
+        （非节点填链接）<input type="checkbox" name="isLink" @(m1.IsNode?"checked=\"checked\"":"")>
+    </div>
+    <div class="label" id="nodeview">
+        <span>节点描述:</span>
+        <select name="isNode">
+            <option value="0" @(m1.ParentId==0?"selected=\"selected\"":"")>顶层父级</option>
+                @foreach(var n in m){
+                    if (m1.Id == n.Id) { }
+                    else
+                    {
+                        if (m1.ParentId == n.Id)
+                        {
+                        <option value="@n.Id" selected="selected">@n.Name</option>
+                        }
+                        else
+                        {
+                        <option value="@n.Id">@n.Name</option>
+                        }
+                    }
+                }
+        </select>
+    </div>
+    <div class="label" id="linkview">
+        <span>链接:</span>
+        <input type="text" name="link" placeholder="链接" value="@m1.Link"/>
+    </div>
+    <div class="label">
+        <span>Subject :</span>
+        <input type="button" class="button" value="修改" onclick="UpdColumn()" />
+    </div>
+</form>

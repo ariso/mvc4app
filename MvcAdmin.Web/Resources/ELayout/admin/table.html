@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表格设计</title>
+<style type="text/css">
+.table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+	width: 100%;
+	max-width: 100%;
+}
+.table th {
+    text-align: left;
+}
+.table caption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #777;
+    text-align: left;
+}
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #DDD;
+}
+.table > tbody > tr > th{
+	padding: 8px;
+line-height: 1.42857;
+vertical-align: top;
+border-top: 1px solid #DDD;
+}
+.table > tbody > tr:hover{
+	background-color:#F9F9F9;
+}
+.table > tbody > tr > td{
+    padding: 8px;
+    line-height: 1.42857;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+}
+.table .btn{ height:20px; border:1px solid #e5e5e5; padding:5px;display:inline; border-radius:5px; background-color:#FFFFFF;}
+.table .btn:hover{border:1px solid #bbb; cursor:pointer;}
+
+</style>
+</head>
+
+<body>
+<table class="table">
+      <caption>Optional table caption.</caption>
+      <thead>
+        <tr>
+          <th><input type="checkbox" checked="checked" /></th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td><div class="btn">按钮</div></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+    string s = ViewData["model"] as string;
+}
+<script type="text/javascript">
+    function doUpload() {
+        // 上传方法
+        var dirStr = $("#ff input[name=dirStr]").val()
+        $("#filebtn").upload({
+            url: '/Admin/Photo/UploadFile',
+            // 文件域名字
+            fileName: 'fileimg',
+            // 其他表单数据
+            params: { dirStr: dirStr },
+            // 上传完成后, 返回json, text
+            dataType: 'json',
+            // 上传之前回调,return true表示可继续上传
+            onSend: function () {
+                return true;
+            },
+            onUpload: function (str) {
+                
+                if ($("form input[name=fileimg]").val() == "") {
+                    $("#filebtn").next().html("未选择文件...");
+                }
+                else { $("#filebtn").next().html(str) }
+            },
+            // 上传之后回调
+            onComplate: function (data) {
+                if (data.success) {
+                    alert("上传成功")
+                    //不加也可以，实现单个多次上传不刷新
+                    loadContent("/Admin/Photo/Index?dirStr=" + dirStr)
+                } else {
+                    alert(data.msg)
+                }
+            }
+        });
+    }
+
+    function cleanAlert() {
+        clean()
+        alert("清空成功" + $("form input[name=fileimg]").val())
+    }
+    function clean() {
+        $("#filebtn").upload("clean")
+    }
+    function ajaxSubmit() {
+        $("#filebtn").upload("ajaxSubmit")
+        clean()
+    }
+</script>
+<span class="tip-title">上传文件与</span>
+<span class="tip-point">@s</span>
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/Photo/Index?dirStr=@s')">返回</a>
+<form class="f-layout" id="ff">
+    <input type="hidden" value="@s" name="dirStr" />
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="选择文件" id="filebtn" onclick="doUpload()"/><strong>未选择文件...</strong>
+    <input type="button" class="button" value="清空" onclick="cleanAlert()"/>
+    <input type="button" class="button" value="上传" onclick="ajaxSubmit()"/>
+</div>
+</form >

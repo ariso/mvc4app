@@ -1,0 +1,220 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    List<MAccountGroup> m = ViewData["model02"] as List<MAccountGroup>;
+}
+<script type="text/javascript">
+    $(function () {
+
+        InitPower()
+        $("#ff select[name=GroupId]").bind("change", function () {
+            //alert($(this).val());
+            GetPower();
+        })
+
+    })
+    function GetPower() {
+        var GroupId = $("#ff select[name=GroupId]").val();
+        $("#fff").find("input[name=mkm]").attr("checked", false);
+        if (GroupId == '0') {
+            //alert('请选择分组')
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/GetPower",
+            data: { id: GroupId },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    loadPower(rsp.rows)
+                } else {
+                    //alert('error');
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function loadPower(rows) {
+        if (rows[0] != 'undefined' && rows[0] != null) {
+            var checkboxs = $("#fff").find("input[name=mkm]");
+            for (var i = 0; i < checkboxs.length ; i++) {
+                for (var j = 0;j<rows.length ;j++){
+                    if ($(checkboxs[i]).val() == rows[j].RModule) {
+                        $(checkboxs[i]).attr("checked",'true');
+                    }
+                }
+            }//.attr("checked",'true');
+        }
+    }
+    //
+    function InitPower() {
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Handle/PowerList",
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    PowerTable(rsp.rows)
+                } else {
+                    //alert('error');
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    function PowerTable(rows) {
+        if (rows[0] != 'undefined' && rows[0] != null) {
+            var arrayObj = new Array();　//创建一个数组
+            var arrayObj2 = new Array();　//创建一个数组
+            var t = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var b = true;
+                for (var j = 0; j < arrayObj.length ; j++) {
+                    if (arrayObj[j] == rows[i].CategoryId) {
+                        b = false;
+                    }
+                }
+                if (b) {
+                    t = rows[i].CategoryId;
+                    arrayObj.push(rows[i].CategoryId)
+                    arrayObj2.push(rows[i].ModuleCategory.CategoryName)
+                }
+            }
+            //alert(arrayObj.length)
+            var s = "";
+            var t = "";
+            var r = "";
+            for (var i = 0; i < arrayObj.length; i++) {
+                t += "<div class=\"label\"><span>" + arrayObj2[i]+ ":</span>";
+                for (var j = 0; j < rows.length; j++) {
+                    if (arrayObj[i] == rows[j].CategoryId) {
+                        s += rows[j].ModuleName + ":<input type=\"checkbox\"  value=\"" + rows[j].Id + "\"  name=\"mkm\"/>";
+                    }
+                }
+                t += s;
+                t += "</div>";
+                s = "";
+            }
+            if (rows.length>0) {
+                t += "<div class=\"label\"><span>Subject:</span><input type=\"button\" class=\"button\" value=\"保存\" onclick=\"SavePower()\"/></div>";
+            }
+            $("#fff").html(t);
+        }
+    }
+    //
+    function SavePower(){
+        if (confirm('确实要保存吗?')) {
+            var gid = $("#ff select[name=GroupId]").val();
+            if (gid == '0') {
+                alert('请选择分组')
+                return;
+            }
+            var checkboxs = $("#fff").find("input[name=mkm]");
+            var ids = "";
+            
+            for (var i = 0; i < checkboxs.length ; i++) {
+                if (i == 0) {
+                    ids += $(checkboxs[i]).val() + ":" + ($(checkboxs[i]).is(':checked') ? "true" : "false");
+                } else {
+                    ids += "," + $(checkboxs[i]).val() + ":" + ($(checkboxs[i]).is(':checked') ? "true" : "false");
+                }
+            }
+            
+            //提交
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Handle/SavePower",
+                data: { id: gid,ids:ids },
+                dataType: "json",
+                success: function (rsp) {
+                    if (rsp.success) {
+                        alert('ok');
+                    } else {
+                        //alert('error');
+                    }
+                },
+                error: function (e, s, t) {
+                    //alert('error');
+                    //alert('网络错误');
+                }
+            });
+        }
+    }
+</script>
+<span class="tip-title">权限模块管理</span>
+<form class="f-layout" id="ff">
+<div class="label">
+<span>账户分组:</span>
+<select name="GroupId">
+    <option value="0">请选择</option>
+    @foreach(var n in m){
+    <option value="@n.Id">@n.GroupName</option>
+     }
+</select>
+</div>
+</form >
+
+<form class="f-layout" id="fff">
+@*<div class="label">
+    <span>账户分组:</span>
+    模块名1:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名2:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名3:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名4:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名5:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名6:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名7:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名8:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名9:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名10:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名11:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名12:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名13:
+<input type="checkbox"  value="0"  name="mkm"/>
+        模块名14:
+<input type="checkbox"  value="0"  name="mkm"/>
+            模块名15:
+<input type="checkbox"  value="0"  name="mkm"/>
+            模块名16:
+<input type="checkbox"  value="0"  name="mkm"/>
+            模块名17:
+<input type="checkbox"  value="0"  name="mkm"/>
+</div>
+<div class="label">
+    <span>账户分组:</span>
+    模块名1:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名2:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名3:
+<input type="checkbox"  value="0"  name="mkm"/>
+    模块名4:
+<input type="checkbox"  value="0"  name="mkm"/>
+</div>
+<div class="label">
+    <span>Subject:</span>
+    <input type="button" class="button" value="保存"/>
+</div>*@
+
+</form >
+

@@ -1,0 +1,157 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(function () {
+        //
+        initP();
+
+        loadArticleList('', 1, 0);
+
+        $("input[type=checkbox][name=isAll]").bind("click", selectCheck)
+    })
+
+    //
+    function loadArticleList(key, page, columnid) {
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/ArticleList",
+            data: { keystr: key, page: page, columnid: columnid },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    tableInit(rsp.rows, rsp.count, page)
+                    //
+                    var totalPages = (rsp.count + 10 - 1) / 10
+                    //
+                    changPage(totalPages, page, key, columnid);
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+    //
+    function tableInit(rows, count, page) {
+        var tb = $("table.table").find("tbody");
+        var th = $("table.table").find("thead tr th").length;
+        //清空
+        tb.html("");
+        //无记录
+        var tr01 = $("<tr align=\"center\"></tr>");
+        $("<td colspan=\"" + th + "\">loading</td>").appendTo(tr01);
+        tb.append(tr01);
+
+        if (rows[0] != 'undefined' && rows[0] != null) {
+            //清空
+            tb.html("");
+            for (var i = 0; i < rows.length; i++) {
+                var r = rows[i];
+                var tr = $("<tr  recid=\"" + r.Id + "\"></tr>");
+                $("<td width=\"20px\"><input type=\"checkbox\" tag=\"chk\" /></td>").appendTo(tr);
+                $("<td>" + r.Id + "</td>").appendTo(tr);
+                $("<td>" + r.Title + "</td>").appendTo(tr);
+                $("<td>" + r.Column.Name + "</td>").appendTo(tr);
+                $("<td>" + r.AddTime + "</td>").appendTo(tr);
+                $("<td>" + r.EditTime + "</td>").appendTo(tr);
+                $("<td><a href=\"javascript:;\" class=\"app-button\" onclick=\"getArticle(" + r.Id + ")\">修改</a></td>").appendTo(tr);
+                tb.append(tr);
+            }
+        } else {
+            //清空
+            tb.html("");
+            //无记录
+            var tr = $("<tr align=\"center\"></tr>");
+            $("<td colspan=\"" + th + "\">(暂无相关记录)</td>").appendTo(tr);
+            tb.append(tr);
+        }
+    }
+    //
+    function changPage(totalPages, currentPage, key, columnid) {
+        //操作分页插件
+        $('ul.pagination').jqPaginator('option', {
+            totalPages: totalPages,/*总数 */
+            visiblePages: 8,/*可见分页面*/
+            currentPage: currentPage,
+            onPageChange: function (num, type) {
+                //$('#p1').text(type + '：' + num);change：6
+                //改变数据
+                loadArticleList(key, num, columnid)
+            }
+        });
+    }
+    //
+    function getArticle(id) {
+        //载入数据
+        loadContent("/Admin/CMS/GetArticle?id=" + id)
+    }
+    //
+    function delData() {
+        var selectArr = $("input[type=checkbox][tag=chk]:checked");
+        var ids = "";
+        for (var i = 0; i < selectArr.length; i++) {
+            if (i == 0) {
+                ids += $(selectArr[i]).parent().parent().attr("recid");
+
+            } else {
+                ids += "," + $(selectArr[i]).parent().parent().attr("recid");
+            }
+        }
+        if (ids == "") { return; }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/DelArticle",
+            data: { ids: ids },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("删除成功");
+                    loadArticleList('', 1, 0);
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+</script>
+<span class="tip-title">CMS管理</span>
+
+
+<table class="table">
+      <caption>
+          <a href="#" class="app-button" onclick="loadContent('/Admin/CMS/AddArticle')">增加文章</a>
+          <a href="#" class="app-button" onclick="loadArticleList('', 1, 0)">刷新</a>
+          <a href="#" class="app-button" onclick="delData()">删除</a>
+      </caption>
+      <thead>
+        <tr>
+          <th width="20px" align="center"><input type="checkbox" name="isAll" /></th>
+          <th width="30px" align="center">编号</th>
+          <th align="center">文章名</th>
+          <th align="center">栏目名</th>
+          <th width="140px" align="center">添加时间</th>
+          <th width="140px" align="center">修改时间</th>
+          <th align="center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+@*        <tr>
+          <td>1</td>
+          <td>第一行第一个</td>
+          <td><a href="#" class="app-button">修改</a><a href="#" class="app-button">删除</a></td>
+        </tr>*@
+
+      </tbody>
+</table>
+    <ul class="pagination"></ul>
+

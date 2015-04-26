@@ -1,0 +1,58 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+}
+<script type="text/javascript">
+    function addLink() {
+        $('#ff').form('submit', {
+            url: "/Admin/CMS/AddLink",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("#ff input[name=linkName]").val() == "") {
+                    alert('请填写链接名')
+                    return false;
+                }
+                if ($("#ff input[name=linkUrl]").val() == "") {
+                    alert('请填写链接地址')
+                    return false;
+                }
+                //if ($("#ff input[name=linkImg]").val() == "") {
+                //    alert('请填写分组名')
+                //    return false;
+                //}
+                //alert('ok')
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('添加成功')
+                    loadContent('/Admin/CMS/LinkList')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+</script>
+<span class="tip-title">添加友情链接</span>
+<form class="f-layout" id="ff" method="post">
+<a href="javascript:;" class="app-button" onclick="loadContent('/Admin/CMS/LinkList')">返回</a>
+<div class="label">
+<span>友情链接名:</span>
+<input type="text" name="linkName" placeholder="链接名"/><strong></strong>
+</div>
+<div class="label">
+<span>链接地址:</span>
+<input type="text" name="linkUrl" placeholder="链接地址" />
+</div>
+<div class="label">
+<span>链接图标logo:</span>
+<input type="text" name="linkImg" placeholder="链接图标logo" />
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="addLink()"/>
+</div>
+</form >
+

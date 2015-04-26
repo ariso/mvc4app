@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <item name="Greeting4Chris" value="string" >
+    Merry Christmas!
+  </item>
+  <item name="Greeting4NewYear" value="string" >
+    Happy Chinese New Year!
+  </item>
+</resources>

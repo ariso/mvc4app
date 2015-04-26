@@ -1,0 +1,67 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    MSite m= ViewData["model"] as MSite;
+}
+<script type="text/javascript">
+
+    function SaveSite() {
+        $('#ff').form('submit', {
+            url: "/Admin/Handle/SaveSite",
+            onSubmit: function () {
+                //进行表单验证
+                //如果返回false阻止提交
+                if ($("input[name=siteName]").val() == "") {
+                    alert('请填写站点名')
+                    return false;
+                }
+                if ($("input[name=siteDescription]").val() == "") {
+                    alert('请填写站点描述')
+                    return false;
+                }
+                if ($("input[name=siteKeywords]").val() == "") {
+                    alert('请填写站点关键字')
+                    return false;
+                }
+                if ($("input[name=siteCopyright]").val() == "") {
+                    alert('请填写站点版权')
+                    return false;
+                }
+            },
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                //alert(data)
+                if (obj.success) {
+                    alert('ok')
+                } else {
+                    alert(obj.msg)
+                }
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">站点设置</span>
+<!--站点设置-->
+<form class="f-layout" id="ff">
+<input type="hidden" name="siteId"   value="@m.SiteId"/>
+<div class="label">
+<span>站点名:</span>
+<input type="text" name="siteName" placeholder="站点名" value="@m.SiteName"/>
+</div>
+<div class="label">
+<span>站点描述:</span>
+<input type="text" name="siteDescription" placeholder="站点描述"  value="@m.SiteDescription"/>
+</div>
+<div class="label">
+<span>站点关键字:</span>
+<input type="text" name="siteKeywords" placeholder="站点关键字"  value="@m.SiteKeywords"/>
+</div>
+<div class="label">
+<span>站点版权:</span>
+<input type="text" name="siteCopyright" placeholder="站点版权"  value="@m.SiteCopyright"/>
+</div>
+<div class="label"><span>Subject :</span>
+<input type="button" class="button" value="提交" onclick="SaveSite()"/>
+</div>
+</form >

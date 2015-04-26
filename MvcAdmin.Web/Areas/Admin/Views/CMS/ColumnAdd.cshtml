@@ -1,0 +1,80 @@
+﻿@using MvcAdmin.Model;
+@{
+    Layout = null;
+    //下拉取值
+    List<MColumn> m = ViewData["model"] as List<MColumn>;
+}
+<script type="text/javascript">
+    $(function () {
+        IsNode()
+        $("input[name=isLink]").bind("click", IsNode)
+    })
+    function IsNode() {
+        var a1 = $("#nodeview");
+        var b1 = $("#linkview");
+        var c1 = $("input[name=isLink]");
+        if (c1.is(":checked")) {
+            a1.show();
+            b1.hide();
+        } else {
+            b1.show();
+            a1.hide();
+        }
+    }
+    function AddColumn() {
+        var name = $("input[name=name]").val();
+        var isNode = $("input[name=isLink]").is(":checked");
+        var parentId = $("select[name=isNode]").val();
+        var link = $("input[name=link]").val();
+        //isNode = !isNode;
+        $.ajax({
+            type: "POST",
+            url: "/Admin/CMS/ColumnAdd",
+            data: { name: name, isNode: isNode, parentId: parentId, link: link },
+            dataType: "json",
+            success: function (rsp) {
+                if (rsp.success) {
+                    alert("添加成功")
+                    loadContent('/Admin/CMS/Column')
+                } else {
+                    alert(rsp.msg)
+                }
+            },
+            error: function (e, s, t) {
+                //alert('error');
+                //alert('网络错误');
+            }
+        });
+    }
+
+</script>
+<span class="tip-title">增加栏目</span>
+<a href="#" class="app-button" onclick="loadContent('/Admin/CMS/Column')">返回</a>
+<!--增加栏目-->
+<form class="f-layout" id="ff">
+    <div class="label">
+        <span>栏目标题:</span>
+        <input type="text" name="name" placeholder="栏目标题" /><strong></strong>
+    </div>
+    <div class="label">
+        <span>是否节点:</span>
+        （非节点填链接）<input type="checkbox" name="isLink" checked="checked" >
+    </div>
+    <div class="label" id="nodeview">
+        <span>节点描述:</span>
+        <select name="isNode">
+            <option value="0">顶层父级</option>
+                @foreach(var n in m){
+                    <option value="@n.Id">@n.Name</option>
+                    }
+        </select>
+    </div>
+    <div class="label" id="linkview">
+        <span>链接:</span>
+        <input type="text" name="link" placeholder="链接" />
+    </div>
+    <div class="label">
+        <span>Subject :</span>
+        <input type="button" class="button" value="添加" onclick="AddColumn()" />
+    </div>
+</form>

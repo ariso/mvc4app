@@ -1,0 +1,133 @@
+﻿@using MvcAdmin.Web.MvcHelper
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>@ViewBag.Title-管理平台</title>
+@*<script src="@Url.Content("~/Resources/Admin/js/jquery.min.js")"></script>
+<script src="@Url.Content("~/Resources/Admin/js/jquery.form.js")"></script>
+<script src="@Url.Content("~/Resources/Admin/js/jqPaginator.js")"></script>
+<script src="@Url.Content("~/Resources/Admin/js/InitAndPublic.js")"></script>
+<link href="@Url.Content("~/Resources/Admin/css/style.css")" rel="stylesheet"/>*@
+    @*@Url.RefJsFileHtml("~/Resources/Admin/js/jquery.min.js")
+    <!--表单插件-->
+    @Url.RefJsFileHtml("~/Resources/Admin/js/jquery.form.js")
+    <!--分页插件-->
+    @Url.RefJsFileHtml("~/Resources/Admin/js/jqPaginator.js")
+    @Url.RefCssFileHtml("~/Resources/Admin/css/style.css")
+    <!--kind编辑器-->
+    @Url.RefCssFileHtml("~/Resources/kindeditor/themes/default/default.css")
+    @Url.RefJsFileHtml("~/Resources/kindeditor/kindeditor.js")
+    @Url.RefJsFileHtml("~/Resources/kindeditor/lang/zh_CN.js")
+    <!--图片灯箱-->
+    @Url.RefJsFileHtml("~/Resources/FancyBox/jquery.fancybox.js")
+    @Url.RefCssFileHtml("~/Resources/FancyBox/jquery.fancybox.css")
+    <!--文件上传插件-->
+    @Url.RefJsFileHtml("~/Resources/publicJs/jquery.upload.js")
+    <!--文件复制插件-->
+    @Url.RefJsFileHtml("~/Resources/ZeroClipboard/jquery.zclip.js")
+    <!--图表插件-->
+    @Url.RefJsFileHtml("~/Resources/Chart/highcharts.js")
+    @Url.RefJsFileHtml("~/Resources/Chart/jquery.highchartTable.js")
+    <!--弹框插件-->
+    @Url.RefJsFileHtml("~/Resources/Sobox/jquery.sobox.js")
+    @Url.RefCssFileHtml("~/Resources/Sobox/style.css")
+    <!--公用js-->
+    @Url.RefJsFileHtml("~/Resources/Admin/js/InitAndPublic.js")*@
+    @System.Web.Optimization.Scripts.Render("~/bundles/Scripts")
+    @System.Web.Optimization.Styles.Render("~/Resources/Admin/css/css")
+    @System.Web.Optimization.Styles.Render("~/Resources/FancyBox/css")
+    @System.Web.Optimization.Styles.Render("~/Resources/kindeditor/themes/default/css")
+    @System.Web.Optimization.Styles.Render("~/Resources/Sobox/css")
+<script type="text/javascript">
+$(function(){
+
+    MenuBind();
+	
+})
+function MenuBind() {
+    $(".menu-m").bind("click", function () {
+        var next = $(this).next();
+        if (next.length != 0) {//没有下级不执行
+            var d = next.css("display");
+            if (next.css("display") == 'none') {
+                next.show(500);
+            } else {
+                next.hide(500);
+            }
+            var c = $(this).find("div:last-child");
+            var a = c.attr("class");
+            if (a == "ico-lower") {
+                c.attr("class", "ico-right");
+            } else {
+                c.attr("class", "ico-lower");
+            }
+        }
+
+    })
+}
+function GetUserInfo(uid) {
+    loadContent('/Admin/home/UserInfo?id=' + uid);
+}
+function CacheClear() {
+    $.ajax({
+        type: "POST",
+        url: "/Admin/Home/CacheClear",
+        dataType: "json",
+        success: function (rsp) {
+            if (rsp.success) {
+                alert(rsp.msg)
+            }
+        },
+        error: function (e, s, t) {
+            //alert('error');
+            //alert('网络错误');
+        }
+    });
+}
+</script>
+</head>
+<body>
+<div class="left">
+<div class="upper">
+	<div class="mark"><div class="logo"></div><div class="txt" >@ViewBag.SiteTitle</div></div>
+</div>
+<div class="lower">
+	<div class="mark unselect"><div class="ico ico-4"></div>操作面板<div class="ico-btn ico-7" onclick="location.reload()"></div></div>
+    
+    @{Html.RenderAction("AdminPowerView", "Home", new RouteValueDictionary(new
+      {
+          Area = "Admin",
+          controller = "Home",
+          action = "AdminPowerView"
+      }));}
+
+    @{Html.RenderAction("PowerView", "Home", new RouteValueDictionary(new
+      {
+          Area = "Admin",
+          controller = "Home",
+          action = "PowerView"
+      }));}
+
+</div>
+</div>
+<div class="right">
+<div class="upper">
+	<div class="mark">hello world!</div>
+	<div class="menus">
+    	<div class="menu">
+            <a href="javascript:;" onclick="GetUserInfo(@ViewBag.UserId)">@ViewBag.UserName</a>
+    	</div>
+        <div class="menu">|</div>
+        <div class="menu"><a href="/Admin/Home/LoginOut" class="button">退 出</a></div>
+        <div class="menu">|</div>
+        <div class="menu"><a href="javascript:;" class="button" onclick=" CacheClear()">清理缓存</a></div>
+    </div>
+</div>
+<div class="lower" id="content">
+            @RenderBody()
+</div>
+</div>
+</body>
+</html>
+
